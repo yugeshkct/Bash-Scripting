@@ -10,7 +10,7 @@ FILE="system_report.txt"
     echo "Hostname:      $(hostname)"
     echo "Internal IP:   $(hostname -I)"
     
-    echo "External IP:   $(curl -s https://ifconfig.me)"
+    echo "External IP:   $(curl -s ifconfig.me)"
     
     echo "Distribution:  $(lsb_release -ds 2>/dev/null || cat /etc/os-release | grep PRETTY_NAME | cut -d'=' -f2)"
     echo "Uptime:        $(uptime -p)"
@@ -23,7 +23,7 @@ FILE="system_report.txt"
     
     echo "--- CPU INFO ---"
     echo "Cores:         $(nproc)"
-    echo "Frequency:     $(lscpu | grep "CPU MHz" | awk '{print $3 " MHz"}')"
+    echo "Frequency:     $(lscpu)"
     
    
 } > "$FILE"
