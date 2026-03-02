@@ -12,7 +12,7 @@ FILE="system_report.txt"
     
     echo "External IP:   $(curl -s ifconfig.me)"
     
-    echo "Distribution:  $(lsb_release -ds 2>/dev/null || cat /etc/os-release | grep PRETTY_NAME | cut -d'=' -f2)"
+    echo "Distribution:  $(uname -r)"
     echo "Uptime:        $(uptime -p)"
     
     echo "--- DISK SPACE ---"
